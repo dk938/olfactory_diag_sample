@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嗅覚診断簡易チェック</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- トップ画面 -->
+    <div id="start-screen">
+        <h1>嗅覚診断簡易チェック</h1>
+        <p>これから6問の質問に答えてください。</p>
+        <button class="button start-button" onclick="startQuiz()">開始</button>
+    </div>
+
+    <!-- 質問画面 -->
+    <div id="question-screen" class="question-container">
+        <div id="question-number" class="question-number"></div>
+        <h2 id="question-text"></h2>
+        <div>
+            <label class="option-label"><input type="radio" name="answer" value="A" onclick="enableNextButton()"> A: <span id="option-a"></span></label>
+            <label class="option-label"><input type="radio" name="answer" value="B" onclick="enableNextButton()"> B: <span id="option-b"></span></label>
+        </div>
+        <div class="navigation-buttons">
+            <button class="button" onclick="previousQuestion()">戻る</button>
+            <button class="button" id="next-button" onclick="nextQuestion()" disabled>次の質問を回答</button>
+        </div>
+    </div>
+
+    <!-- 結果画面 -->
+    <div id="result-screen">
+        <h2>結果</h2>
+        <div id="result-content"></div>
+        <!-- 4象限マトリクスのキャンバス -->
+        <canvas id="result-matrix" width="300" height="300"></canvas>
+        <button class="button" onclick="restartQuiz()">再スタート</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
