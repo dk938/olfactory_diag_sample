@@ -3,38 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>嗅覚診断簡易チェック</title>
+    <title>フェムケア診断</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- トップ画面 -->
-    <div id="start-screen">
-        <h1>嗅覚診断簡易チェック</h1>
-        <p>これから6問の質問に答えてください。</p>
-        <button class="button start-button" onclick="startQuiz()">開始</button>
+    <!-- 最初の画面 -->
+    <div id="start-screen" class="background-image">
+        <div class="start-screen-container">
+            <div class="overlay-content">
+                <img src="Ad-Naturam ロゴ.webp" alt="ロゴ" class="logo-image">
+                <p class="intro-text-bold">あなたの体質に合った<br>フェムケアアドバイス</p>
+                <p class="intro-text-small">Produced by Ad-Naturam × 嗅覚反応分析</p>
+                <button onclick="startQuiz()" class="start-button">開始</button>
+            </div>
+        </div>
     </div>
 
     <!-- 質問画面 -->
-    <div id="question-screen" class="question-container">
-        <div id="question-number" class="question-number"></div>
-        <h2 id="question-text"></h2>
-        <div>
-            <label class="option-label"><input type="radio" name="answer" value="A" onclick="enableNextButton()"> A: <span id="option-a"></span></label>
-            <label class="option-label"><input type="radio" name="answer" value="B" onclick="enableNextButton()"> B: <span id="option-b"></span></label>
+    <div id="question-screen" class="background-image" style="display: none;">
+        <div id="progress-bar" class="progress-bar">
+            <div id="progress-bar-inner" class="progress-bar-inner"></div>
+        </div>
+        <div id="question-content" class="question-content">
+            <p id="question-text"></p>
+        </div>
+        <div class="options-container">
+            <div id="option-a" class="option-box" onclick="selectOption('A')">
+                <div class="option-background">A</div>
+                <div class="option-text"></div>
+            </div>
+            <div id="option-b" class="option-box" onclick="selectOption('B')">
+                <div class="option-background">B</div>
+                <div class="option-text"></div>
+            </div>
         </div>
         <div class="navigation-buttons">
-            <button class="button" onclick="previousQuestion()">戻る</button>
-            <button class="button" id="next-button" onclick="nextQuestion()" disabled>次の質問を回答</button>
+            <button id="prev-button" onclick="previousQuestion()">戻る</button>
+            <button id="next-button" onclick="nextQuestion()">次へ</button>
         </div>
     </div>
 
     <!-- 結果画面 -->
-    <div id="result-screen">
-        <h2>結果</h2>
+    <div id="result-screen" class="background-image" style="display: none;">
+        <h2>診断結果</h2>
+        <p>あなたのタイプは: <span id="final-type"></span></p>
+        <canvas id="result-matrix" width="150" height="150"></canvas>
         <div id="result-content"></div>
-        <!-- 4象限マトリクスのキャンバス -->
-        <canvas id="result-matrix" width="300" height="300"></canvas>
-        <button class="button" onclick="restartQuiz()">再スタート</button>
+        <button onclick="restartQuiz()" class="restart-button">再スタート</button>
     </div>
 
     <script src="script.js"></script>

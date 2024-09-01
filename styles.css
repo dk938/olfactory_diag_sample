@@ -1,65 +1,240 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 共通の背景クラス */
+.background-image {
+    background-image: url('Background 1280x832.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* 最初の画面の設定 */
+#start-screen {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* 修正: 上部にコンテンツを配置 */
-    height: 100vh;
-    overflow-y: auto; /* 縦スクロールを許可 */
+    justify-content: flex-start; /* 上部から順に配置 */
+    padding-top: 40px; /* 上部からの余白を設定 */
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-.question-container,
-#result-screen {
-    display: none; /* 初期状態で非表示 */
-    text-align: left; /* 左揃え */
-    width: 80%;
-    max-width: 500px;
-    padding-bottom: 20px; /* 下部のスペースを減らして調整 */
-}
-
-.navigation-buttons {
-    position: fixed; /* 修正: 固定位置にする */
-    bottom: 20px; /* 画面の下から固定 */
-    left: 0;
-    right: 0;
+.start-screen-container {
     display: flex;
-    justify-content: space-between;
-    padding: 0 20px; /* コンテナの幅に合わせてパディング */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 600px; /* 最大幅を設定 */
+    position: relative;
+    z-index: 2; /* コンテンツを前面に表示するための設定 */
+    text-align: center;
 }
 
-.button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+.overlay-content {
+    z-index: 3; /* 前面に表示するための設定 */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 80%;
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明の背景色を設定 */
+}
+
+.logo-image {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.intro-text-bold {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.intro-text-small {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
 }
 
 .start-button {
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.start-button:hover {
+    background-color: #2c3e9b;
+}
+
+/* 質問画面と結果画面の設定 */
+#question-screen, #result-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    width: 0%;
+    background-color: #3f51b5;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.question-content {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    gap: 20px;
+}
+
+.option-box {
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.3s, border-width 0.3s, background-color 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    background-color: white;
+    border: 2px solid #ccc;
+}
+
+.option-box.selected {
+    border-color: #1E3A8A;
+    border-width: 4px;
+}
+
+.option-background {
+    position: absolute;
+    font-size: 100px;
+    color: rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.option-text {
+    position: relative;
+    z-index: 1;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    width: 100%;
     margin-top: 20px;
 }
 
-.question-number {
+.hidden {
+    display: none;
+}
+
+#result-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#final-type {
+    margin-bottom: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.option-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.button:disabled {
-    background-color: #ccc; /* グレーアウト */
-    cursor: not-allowed; /* 押下不可のカーソル */
-}
-
-#result-content {
-    margin-bottom: 20px; /* 結果とマトリクスの間にスペースを追加 */
 }
 
 #result-matrix {
-    border: 1px solid #000; /* マトリクスの境界線 */
-    display: block;
-    margin: 20px auto; /* マトリクスを中央揃え */
+    border: 1px solid #000;
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+}
+
+.highlighted {
+    background-color: rgba(255, 235, 59, 0.5);
+    border: 2px solid #FFEB3B;
+}
+
+.result-table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: center;
+}
+
+.result-table th,
+.result-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.restart-button {
+    margin-top: 20px;
+    text-align: center; /* テキスト中央寄せ */
 }
