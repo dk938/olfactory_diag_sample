@@ -39,7 +39,7 @@
         </div>
         <div class="navigation-buttons">
             <button id="prev-button" onclick="previousQuestion()">戻る</button>
-            <button id="next-button" onclick="nextQuestion()">次へ</button>
+            <button id="next-button" onclick="nextQuestion()" disabled>次へ</button>
         </div>
     </div>
 
@@ -48,7 +48,21 @@
         <h2>診断結果</h2>
         <p>あなたのタイプは: <span id="final-type"></span></p>
         <canvas id="result-matrix" width="150" height="150"></canvas>
-        <div id="result-content"></div>
+        <table id="result-table" class="result-table">
+            <tr>
+                <th>質問</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+            </tr>
+            <tr id="answers-row">
+                <td>回答</td>
+                <!-- JavaScriptでA/Bの回答が挿入されます -->
+            </tr>
+        </table>
         <button onclick="restartQuiz()" class="restart-button">再スタート</button>
     </div>
 

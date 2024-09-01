@@ -8,7 +8,7 @@ let selectedAnswers = [];
 function startQuiz() {
     // 最初の画面を非表示にし、質問画面を表示
     document.getElementById('start-screen').style.display = 'none';
-    document.getElementById('question-screen').style.display = 'flex'; // display: flexに設定
+    document.getElementById('question-screen').style.display = 'flex';
     showQuestion(0);
 }
 
@@ -51,7 +51,8 @@ function showQuestion(index) {
 
     // 前の質問に戻るボタンの有効/無効設定
     document.getElementById('prev-button').style.display = index === 0 ? 'none' : 'inline-block';
-    document.getElementById('next-button').style.display = 'inline-block'; // 次へボタンを表示
+    document.getElementById('next-button').style.display = 'inline-block';
+    document.getElementById('next-button').disabled = !selectedAnswers[index]; // 次へボタンの有効/無効
 
     // 選択肢の選択状態を初期化
     document.querySelectorAll('.option-box').forEach(function (element) {
@@ -98,7 +99,7 @@ function nextQuestion() {
 // 結果を表示する関数
 function showResult() {
     document.getElementById('question-screen').style.display = 'none';
-    document.getElementById('result-screen').style.display = 'flex'; // display: flexに設定
+    document.getElementById('result-screen').style.display = 'flex';
     calculateResult();
 }
 
@@ -124,6 +125,36 @@ function calculateResult() {
 
     // 結果を画面に表示
     document.getElementById('final-type').innerText = finalType;
+
+    // 4象限のマトリックスをハイライト
+    highlightResultMatrix(upperType, leftType);
+
+    // 回答結果を表に表示
+    const answersRow = document.getElementById('answers-row');
+    answersRow.innerHTML = '<td>回答</td>' + selectedAnswers.map(answer => `<td>${answer}</td>`).join('');
+}
+
+// マトリックスをハイライトする関数
+function highlightResultMatrix(upperType, leftType) {
+    const canvas = document.getElementById('result-matrix');
+    const ctx = canvas.getContext('2d');
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // グリッドを描画
+    ctx.strokeStyle = '#333';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(0, 0, 75, 75);
+    ctx.strokeRect(75, 0, 75, 75);
+    ctx.strokeRect(0, 75, 75, 75);
+    ctx.strokeRect(75, 75, 75, 75);
+
+    // 結果をハイライト
+    ctx.fillStyle = 'rgba(255, 235, 59, 0.5)';
+    if (leftType === '左タイプ' && upperType === '上タイプ') ctx.fillRect(0, 0, 75, 75);
+    if (leftType === '右タイプ' && upperType === '上タイプ') ctx.fillRect(75, 0, 75, 75);
+    if (leftType === '左タイプ' && upperType === '下タイプ') ctx.fillRect(0, 75, 75, 75);
+    if (leftType === '右タイプ' && upperType === '下タイプ') ctx.fillRect(75, 75, 75, 75);
 }
 
 // クイズを再スタートする関数
@@ -131,5 +162,5 @@ function restartQuiz() {
     selectedAnswers = [];
     currentQuestion = 0;
     document.getElementById('result-screen').style.display = 'none';
-    document.getElementById('start-screen').style.display = 'flex'; // display: flexに設定
+    document.getElementById('start-screen').style.display = 'flex';
 }
