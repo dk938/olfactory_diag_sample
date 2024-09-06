@@ -50,7 +50,8 @@ function showQuestion(index) {
     document.getElementById('progress-bar-inner').style.width = progress + '%';
 
     // 前の質問に戻るボタンの有効/無効設定
-    document.getElementById('prev-button').style.display = index === 0 ? 'none' : 'inline-block';
+    //document.getElementById('prev-button').style.display = index === 0 ? 'none' : 'inline-block';
+    document.getElementById('prev-button').style.display = 'inline-block';
     document.getElementById('next-button').style.display = 'inline-block';
     document.getElementById('next-button').disabled = !selectedAnswers[index]; // 次へボタンの有効/無効
 
@@ -83,6 +84,8 @@ function previousQuestion() {
     if (currentQuestion > 0) {
         currentQuestion--;
         showQuestion(currentQuestion);
+    } else {
+        restartQuiz();
     }
 }
 
@@ -163,4 +166,5 @@ function restartQuiz() {
     currentQuestion = 0;
     document.getElementById('result-screen').style.display = 'none';
     document.getElementById('start-screen').style.display = 'flex';
+    document.getElementById('question-screen').style.display = 'none';
 }
