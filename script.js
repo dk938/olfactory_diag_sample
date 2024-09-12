@@ -15,8 +15,8 @@ function startQuiz() {
 // 質問を表示する関数
 function showQuestion(index) {
     const questions = [
-        "旅行の計画を立てるとき、あなたはどちらを選びますか？",
-        "女子会で、話題が自分の得意分野であるとき、あなたはどちらの態度を取りますか？",
+        "1年の休日の過ごし方で多いのはどちらですか？",
+        "リスクを伴う決断をする必要があるとき、どのように対応しますか？",
         "チームでのディスカッションで、あなたはどちらの意見を支持しますか？",
         "重要な決断をする際に、どちらを優先しますか？",
         "知人や友人が問題を抱えていることに、すぐに気づけるタイプですか？",
@@ -24,19 +24,19 @@ function showQuestion(index) {
     ];
 
     const optionsA = [
-        "行ったことのない場所や新しい冒険を求める。",
-        "積極的にその話題について話し、友達と意見を交わす。",
-        "新しい視点を取り入れて、これまでにない解決策を提案する意見。",
-        "知人や友人に相談して頼る。",
+        "なるべく外出、できれば旅行の計画を立てる。",
+        "可能性に焦点を当て、前向きに考える",
+        "リスクがあっても、これまでにない解決策を提案する意見を支持する。",
+        "すぐに知人や友人に相談して、判断を委ねる。",
         "他人の意見や感情に気を遣っているので、比較的早く気づけると思う。",
         "対立を避け、自分の意見を抑える。"
     ];
 
     const optionsB = [
-        "過去に訪れたことがあり、安心できる場所を選ぶ。",
-        "まずは友達の意見を聞いてから、自分の考えを慎重にまとめる。",
-        "これまでの実績に基づいて、リスクを避ける従来の方法を支持する意見。",
-        "自分の経験や直感を優先する。",
+        "家で読書や映画鑑賞などゆっくりと過ごす。",
+        "リスクを最小限に抑えることに焦点を当てる",
+        "解決策であっても、リスクがあるなら従来の方法を支持する意見を支持する。",
+        "あまり周りに相談せず、自分で考えて決断する。",
         "自分の仕事に集中しているので、気づかないことが多いかもしれない。",
         "自分の意見を変えない。"
     ];
@@ -50,7 +50,6 @@ function showQuestion(index) {
     document.getElementById('progress-bar-inner').style.width = progress + '%';
 
     // 前の質問に戻るボタンの有効/無効設定
-    //document.getElementById('prev-button').style.display = index === 0 ? 'none' : 'inline-block';
     document.getElementById('prev-button').style.display = 'inline-block';
     document.getElementById('next-button').style.display = 'inline-block';
     document.getElementById('next-button').disabled = !selectedAnswers[index]; // 次へボタンの有効/無効
@@ -167,4 +166,3 @@ function restartQuiz() {
     document.getElementById('result-screen').style.display = 'none';
     document.getElementById('start-screen').style.display = 'flex';
     document.getElementById('question-screen').style.display = 'none';
-}
