@@ -166,3 +166,4 @@ function restartQuiz() {
     document.getElementById('result-screen').style.display = 'none';
     document.getElementById('start-screen').style.display = 'flex';
     document.getElementById('question-screen').style.display = 'none';
+}
