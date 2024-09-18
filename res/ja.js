@@ -1,4 +1,6 @@
 const translationsJa = {
+    introBold: "あなたの体質に合った\nフェムケアアドバイス",
+    introSmall: "Produced by Ad-Naturam × 嗅覚反応分析",
     start: "開始",
     next: "次へ",
     prev: "戻る",

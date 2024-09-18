@@ -1,4 +1,6 @@
 const translationsFr = {
+    introBold: "Votre conseil Femcare\npersonnalisé",
+    introSmall: "Produit par Ad-Naturam × Analyse de réponse olfactive",
     start: "Commencer",
     next: "Suivant",
     prev: "Précédent",

@@ -104,7 +104,7 @@ function calculateResult() {
     // 4象限のマトリックスをハイライト
     highlightResultMatrix(upperType, leftType);
 
-    // 回答結��を表に表示
+    // 回答結を表に表示
     const answersRow = document.getElementById('answers-row');
     answersRow.innerHTML = '<td>回答</td>' + selectedAnswers.map(answer => `<td>${answer}</td>`).join('');
 }
@@ -154,6 +154,9 @@ window.onload = function() {
     questions = translations.questions; // 質問をリソースから取得
     updateText();
 
+    // 言語選択の初期値を設定
+    document.getElementById('language-select').value = 'en';
+
     // DOM要素が存在するか確認してから質問を表示
     if (document.getElementById('question-screen')) {
         showQuestion(currentQuestion); // 初期の質問を表示
@@ -169,8 +172,8 @@ function updateText() {
     const nextButton = document.getElementById('next-button');
     const restartButton = document.querySelector('.restart-button');
 
-    if (introBold) introBold.innerText = "あなたの体質に合った\nフェムケアアドバイス"; // 固定テキスト
-    if (introSmall) introSmall.innerText = "Produced by Ad-Naturam × 嗅覚反応分析"; // 固定テキスト
+    if (introBold) introBold.innerText = translations.introBold; //あなたの体質にあった…
+    if (introSmall) introSmall.innerText = translations.introSmall; //Produced by Ad-Naturam × 嗅覚反応分析
     if (startButton) startButton.innerText = translations.start; // スタートボタン
     if (prevButton) prevButton.innerText = translations.prev; // 戻るボタン
     if (nextButton) nextButton.innerText = translations.next; // 次へボタン

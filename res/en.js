@@ -1,4 +1,6 @@
 const translationsEn = {
+    introBold: "Your personalized\nFemcare advice",
+    introSmall: "Produced by Ad-Naturam × Olfactory Response Analysis",
     start: "Start",
     next: "Next",
     prev: "Previous",

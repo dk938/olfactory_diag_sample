@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>フェムケア診断</title>
+    <title>フェムケア診断/Femcare Diagnosis</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,9 +12,14 @@
         <div class="start-screen-container">
             <div class="overlay-content">
                 <img src="Ad-Naturam-logo.webp" alt="ロゴ" class="logo-image">
-                <p class="intro-text-bold">あなたの体質に合った<br>フェムケアアドバイス</p>
-                <p class="intro-text-small">Produced by Ad-Naturam × 嗅覚反応分析</p>
-                <button onclick="startQuiz()" class="start-button">開始</button>
+                <select id="language-select" onchange="changeLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="ja">Japanese</option>
+                    <option value="fr">French</option>
+                </select>
+                <p id="intro-text-bold" class="intro-text-bold">あなたの体質に合った<br>フェムケアアドバイス</p>
+                <p id="intro-text-small" class="intro-text-small">Produced by Ad-Naturam × 嗅覚反応分析</p>
+                <button id="start-button" onclick="startQuiz()" class="start-button">開始</button>
             </div>
         </div>
     </div>
