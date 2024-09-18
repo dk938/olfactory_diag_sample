@@ -14,36 +14,9 @@ function startQuiz() {
 
 // 質問を表示する関数
 function showQuestion(index) {
-    const questions = [
-        "1年の休日の過ごし方で多いのはどちらですか？",
-        "リスクを伴う決断をする必要があるとき、どのように対応しますか？",
-        "チームでのディスカッションで、あなたはどちらの意見を支持しますか？",
-        "重要な決断をする際に、どちらを優先しますか？",
-        "知人や友人が問題を抱えていることに、すぐに気づけるタイプですか？",
-        "友人や同僚と意見が食い違ったとき、あなたはどちらの姿勢を取りますか？"
-    ];
-
-    const optionsA = [
-        "なるべく外出、できれば旅行の計画を立てる。",
-        "可能性に焦点を当て、前向きに考える",
-        "リスクがあっても、これまでにない解決策を提案する意見を支持する。",
-        "すぐに知人や友人に相談して、判断を委ねる。",
-        "他人の意見や感情に気を遣っているので、比較的早く気づけると思う。",
-        "対立を避け、自分の意見を抑える。"
-    ];
-
-    const optionsB = [
-        "家で読書や映画鑑賞などゆっくりと過ごす。",
-        "リスクを最小限に抑えることに焦点を当てる",
-        "解決策であっても、リスクがあるなら従来の方法を支持する意見を支持する。",
-        "あまり周りに相談せず、自分で考えて決断する。",
-        "自分の仕事に集中しているので、気づかないことが多いかもしれない。",
-        "自分の意見を変えない。"
-    ];
-
-    document.getElementById('question-text').innerText = questions[index];
-    document.getElementById('option-a').querySelector('.option-text').innerText = optionsA[index];
-    document.getElementById('option-b').querySelector('.option-text').innerText = optionsB[index];
+    document.getElementById('question-text').innerText = translations.questions[index];
+    document.getElementById('option-a').querySelector('.option-text').innerText = translations.optionsA[index];
+    document.getElementById('option-b').querySelector('.option-text').innerText = translations.optionsB[index];
 
     // プログレスバーの更新
     const progress = ((index + 1) / questions.length) * 100;
@@ -131,7 +104,7 @@ function calculateResult() {
     // 4象限のマトリックスをハイライト
     highlightResultMatrix(upperType, leftType);
 
-    // 回答結果を表に表示
+    // 回答結��を表に表示
     const answersRow = document.getElementById('answers-row');
     answersRow.innerHTML = '<td>回答</td>' + selectedAnswers.map(answer => `<td>${answer}</td>`).join('');
 }
@@ -166,4 +139,58 @@ function restartQuiz() {
     document.getElementById('result-screen').style.display = 'none';
     document.getElementById('start-screen').style.display = 'flex';
     document.getElementById('question-screen').style.display = 'none';
+}
+
+// 言語設定
+let language = 'en'; // デフォルトを英語に設定
+let translations; // 初期値を設定しない
+
+// 質問の配列を定義
+let questions = []; // 初期値を空の配列に設定
+
+// ページが読み込まれたときに初期化
+window.onload = function() {
+    translations = translationsEn; // リソースファイルの読み込み後に設定
+    questions = translations.questions; // 質問をリソースから取得
+    updateText();
+
+    // DOM要素が存在するか確認してから質問を表示
+    if (document.getElementById('question-screen')) {
+        showQuestion(currentQuestion); // 初期の質問を表示
+    }
+};
+
+// テキストを更新する関数
+function updateText() {
+    const introBold = document.getElementById('intro-text-bold');
+    const introSmall = document.getElementById('intro-text-small');
+    const startButton = document.getElementById('start-button');
+    const prevButton = document.getElementById('prev-button');
+    const nextButton = document.getElementById('next-button');
+    const restartButton = document.querySelector('.restart-button');
+
+    if (introBold) introBold.innerText = "あなたの体質に合った\nフェムケアアドバイス"; // 固定テキスト
+    if (introSmall) introSmall.innerText = "Produced by Ad-Naturam × 嗅覚反応分析"; // 固定テキスト
+    if (startButton) startButton.innerText = translations.start; // スタートボタン
+    if (prevButton) prevButton.innerText = translations.prev; // 戻るボタン
+    if (nextButton) nextButton.innerText = translations.next; // 次へボタン
+    if (restartButton) restartButton.innerText = translations.restart; // 再スタートボタン
+}
+
+// 言語を変更する関数
+function changeLanguage(newLanguage) {
+    language = newLanguage;
+    switch (language) {
+        case 'ja':
+            translations = translationsJa;
+            break;
+        case 'fr':
+            translations = translationsFr;
+            break;
+        case 'en':
+            translations = translationsEn;
+            break;
+    }
+    updateText(); // テキストを更新
+    showQuestion(currentQuestion); // 質問を表示
 }
