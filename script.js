@@ -101,12 +101,14 @@ function calculateResult() {
     // 結果を画面に表示
     document.getElementById('final-type').innerText = finalType;
 
+
     // 4象限のマトリックスをハイライト
     highlightResultMatrix(upperType, leftType);
 
-    // 回答結を表に表示
+    // 回答結果を表に表示
     const answersRow = document.getElementById('answers-row');
-    answersRow.innerHTML = '<td>回答</td>' + selectedAnswers.map(answer => `<td>${answer}</td>`).join('');
+    answersRow.innerHTML = `<td id="answer">${translations.answer}</td>` +
+        selectedAnswers.map((answer, index) => `<td>${answer}</td>`).join('');
 }
 
 // マトリックスをハイライトする関数
