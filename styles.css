@@ -238,3 +238,12 @@ body {
     margin-top: 20px;
     text-align: center; /* テキスト中央寄せ */
 }
+
+#progress-indicator {
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; /* 水平方向に中央揃え */
+}
+
+#question-text {
+    font-weight: bold; /* 文字を太字にする */
+}

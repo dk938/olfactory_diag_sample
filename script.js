@@ -22,6 +22,9 @@ function showQuestion(index) {
     const progress = ((index + 1) / questions.length) * 100;
     document.getElementById('progress-bar-inner').style.width = progress + '%';
 
+    // プログレスインジケーターの表示
+    document.getElementById('progress-indicator').innerText = `${index + 1} / ${questions.length}`;
+
     // 前の質問に戻るボタンの有効/無効設定
     document.getElementById('prev-button').style.display = 'inline-block';
     document.getElementById('next-button').style.display = 'inline-block';
