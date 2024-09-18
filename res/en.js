@@ -5,6 +5,10 @@ const translationsEn = {
     next: "Next",
     prev: "Previous",
     restart: "Restart",
+    resultTitle: "Diagnosis Result",
+    resultType: "Your type is: ",
+    question: "Question",
+    answer: "Answer",
     questions: [
         "What is your preferred way to spend your holidays?",
         "How do you respond when you need to make a decision that involves risk?",

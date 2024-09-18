@@ -170,14 +170,22 @@ function updateText() {
     const startButton = document.getElementById('start-button');
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
-    const restartButton = document.querySelector('.restart-button');
+    const resultTitle = document.getElementById('result-title');
+    const resultType = document.getElementById('result-type');
+    const question = document.getElementById('question');
+    const answer = document.getElementById('answer');
+    const restart = document.getElementById('restart');
 
     if (introBold) introBold.innerText = translations.introBold; //あなたの体質にあった…
     if (introSmall) introSmall.innerText = translations.introSmall; //Produced by Ad-Naturam × 嗅覚反応分析
     if (startButton) startButton.innerText = translations.start; // スタートボタン
     if (prevButton) prevButton.innerText = translations.prev; // 戻るボタン
     if (nextButton) nextButton.innerText = translations.next; // 次へボタン
-    if (restartButton) restartButton.innerText = translations.restart; // 再スタートボタン
+    if (resultTitle) resultTitle.innerText = translations.resultTitle; // 診断結果
+    if (resultType) resultType.innerText = translations.resultType; // あなたのタイプは:
+    if (question) question.innerText = translations.question; // 質問
+    if (answer) answer.innerText = translations.answer; // 回答
+    if (restart) restart.innerText = translations.restart; // 再スタート
 }
 
 // 言語を変更する関数

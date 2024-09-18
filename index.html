@@ -50,12 +50,12 @@
 
     <!-- 結果画面 -->
     <div id="result-screen" class="background-image" style="display: none;">
-        <h2>診断結果</h2>
-        <p>あなたのタイプは: <span id="final-type"></span></p>
+        <h2 id="result-title">診断結果</h2>
+        <p><span id="result-type">あなたのタイプは:</span> <span id="final-type"></span></p>
         <canvas id="result-matrix" width="150" height="150"></canvas>
         <table id="result-table" class="result-table">
             <tr>
-                <th>質問</th>
+                <th id="question">質問</th>
                 <th>1</th>
                 <th>2</th>
                 <th>3</th>
@@ -64,11 +64,11 @@
                 <th>6</th>
             </tr>
             <tr id="answers-row">
-                <td>回答</td>
+                <td id="answer">回答</td>
                 <!-- JavaScriptでA/Bの回答が挿入されます -->
             </tr>
         </table>
-        <button onclick="restartQuiz()" class="restart-button">再スタート</button>
+        <button onclick="restartQuiz()" class="restart-button" id="restart">再スタート</button>
     </div>
 
     <script src="res/ja.js"></script>

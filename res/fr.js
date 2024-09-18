@@ -5,6 +5,10 @@ const translationsFr = {
     next: "Suivant",
     prev: "Précédent",
     restart: "Redémarrer",
+    resultTitle: "Résultat du diagnostic",
+    resultType: "Votre type est: ",
+    question: "Question",
+    answer: "Réponse",
     questions: [
         "Quelle est votre façon préférée de passer vos jours de congé ?",
         "Comment réagissez-vous lorsque vous devez prendre une décision impliquant un risque ?",

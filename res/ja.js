@@ -5,6 +5,10 @@ const translationsJa = {
     next: "次へ",
     prev: "戻る",
     restart: "再スタート",
+    resultTitle: "診断結果",
+    resultType: "あなたのタイプは: ",
+    question: "質問",
+    answer: "回答",
     questions: [
         "1年の休日の過ごし方で多いのはどちらですか？",
         "リスクを伴う決断をする必要があるとき、どのように対応しますか？",
