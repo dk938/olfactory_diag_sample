@@ -36,5 +36,6 @@ const translationsJa = {
     "balance": "バランス",
     "active": "アクティブ",
     "feminin": "フェミニン",
-    "harmony": "ハーモニー"
+    "harmony": "ハーモニー",
+    "detailLink": "詳細リンク"
 };

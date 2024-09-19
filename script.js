@@ -112,6 +112,10 @@ function calculateResult() {
     // finalTypeを翻訳して表示
     const finalType = translations[finalTypeKey]; // 変更点
 
+    // 詳細リンクを設定
+    const detailLinkText = document.getElementById('detail-link-text');
+    detailLinkText.innerHTML = `<a href="${getLink(finalTypeKey)}" target="_blank">${translations.detailLink}</a>`; // 変更点
+
     // 結果を画面に表示
     document.getElementById('final-type').innerText = finalType;
 
@@ -119,6 +123,17 @@ function calculateResult() {
     const answersRow = document.getElementById('answers-row');
     answersRow.innerHTML = `<td id="answer">${translations.answer}</td>` +
         selectedAnswers.map((answer, index) => `<td>${answer}</td>`).join('');
+}
+
+// finalTypeKeyに基づいてリンクを取得する関数
+function getLink(finalTypeKey) {
+    const links = {
+        "balance": "https://kusaba-aroma.my.canva.site/dagrbkbj8i8",
+        "active": "https://kusaba-aroma.my.canva.site/dagrbmx3dws",
+        "feminin": "https://kusaba-aroma.my.canva.site/dagrbqzzdok",
+        "harmony": "https://kusaba-aroma.my.canva.site/dagrbkm8eew"
+    };
+    return links[finalTypeKey] || "#"; // デフォルトは#に設定
 }
 
 // クイズを再スタートする関数

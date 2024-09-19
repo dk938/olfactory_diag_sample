@@ -36,5 +36,6 @@ const translationsFr = {
     "balance": "Équilibre",
     "active": "Actif",
     "feminin": "Féminin",
-    "harmony": "Harmonie"
+    "harmony": "Harmonie",
+    "detailLink": "Détails"
 };
