@@ -1,6 +1,6 @@
 const translationsEn = {
-    introBold: "Your personalized\nFemcare advice",
-    introSmall: "Produced by Ad-Naturam × Olfactory Response Analysis",
+    introBold: "Personal Aroma Matching",
+    introSmall: "Produced by AHIS",
     start: "Start",
     next: "Next",
     prev: "Previous",
@@ -32,5 +32,9 @@ const translationsEn = {
         "Think and decide for myself without consulting others much.",
         "I may not notice things often because I focus on my own work.",
         "I do not change my opinion."
-    ]
+    ],
+    "balance": "Balance",
+    "active": "Active",
+    "feminin": "Feminin",
+    "harmony": "Harmony"
 };

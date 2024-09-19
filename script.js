@@ -96,45 +96,29 @@ function calculateResult() {
     if (selectedAnswers[4] === 'A') leftCount++;
     if (selectedAnswers[5] === 'A') leftCount++;
 
-    const upperType = upperCount >= 2 ? "上タイプ" : "下タイプ";
-    const leftType = leftCount >= 2 ? "左タイプ" : "右タイプ";
+    const upperType = upperCount >= 2 ? "upper" : "lower";
+    const leftType = leftCount >= 2 ? "left" : "right";
 
-    const finalType = `${leftType}${upperType}`;
+    // combinationTypeを算出し、finalTypeにマッピング
+    const combinationType = `${leftType}-${upperType}`;
+    const typeMapping = {
+        "left-upper": "balance",
+        "left-lower": "feminin",
+        "right-upper": "active",
+        "right-lower": "harmony"
+    };
+    const finalTypeKey = typeMapping[combinationType]; // 変更点
+
+    // finalTypeを翻訳して表示
+    const finalType = translations[finalTypeKey]; // 変更点
 
     // 結果を画面に表示
     document.getElementById('final-type').innerText = finalType;
-
-
-    // 4象限のマトリックスをハイライト
-    highlightResultMatrix(upperType, leftType);
 
     // 回答結果を表に表示
     const answersRow = document.getElementById('answers-row');
     answersRow.innerHTML = `<td id="answer">${translations.answer}</td>` +
         selectedAnswers.map((answer, index) => `<td>${answer}</td>`).join('');
-}
-
-// マトリックスをハイライトする関数
-function highlightResultMatrix(upperType, leftType) {
-    const canvas = document.getElementById('result-matrix');
-    const ctx = canvas.getContext('2d');
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // グリッドを描画
-    ctx.strokeStyle = '#333';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(0, 0, 75, 75);
-    ctx.strokeRect(75, 0, 75, 75);
-    ctx.strokeRect(0, 75, 75, 75);
-    ctx.strokeRect(75, 75, 75, 75);
-
-    // 結果をハイライト
-    ctx.fillStyle = 'rgba(255, 235, 59, 0.5)';
-    if (leftType === '左タイプ' && upperType === '上タイプ') ctx.fillRect(0, 0, 75, 75);
-    if (leftType === '右タイプ' && upperType === '上タイプ') ctx.fillRect(75, 0, 75, 75);
-    if (leftType === '左タイプ' && upperType === '下タイプ') ctx.fillRect(0, 75, 75, 75);
-    if (leftType === '右タイプ' && upperType === '下タイプ') ctx.fillRect(75, 75, 75, 75);
 }
 
 // クイズを再スタートする関数
@@ -181,8 +165,8 @@ function updateText() {
     const answer = document.getElementById('answer');
     const restart = document.getElementById('restart');
 
-    if (introBold) introBold.innerText = translations.introBold; //あなたの体質にあった…
-    if (introSmall) introSmall.innerText = translations.introSmall; //Produced by Ad-Naturam × 嗅覚反応分析
+    if (introBold) introBold.innerText = translations.introBold;
+    if (introSmall) introSmall.innerText = translations.introSmall;
     if (startButton) startButton.innerText = translations.start; // スタートボタン
     if (prevButton) prevButton.innerText = translations.prev; // 戻るボタン
     if (nextButton) nextButton.innerText = translations.next; // 次へボタン

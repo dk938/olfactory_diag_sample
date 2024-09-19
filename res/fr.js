@@ -1,6 +1,6 @@
 const translationsFr = {
-    introBold: "Votre conseil Femcare\npersonnalisé",
-    introSmall: "Produit par Ad-Naturam × Analyse de réponse olfactive",
+    introBold: "Matching d’arômes personnalisé",
+    introSmall: "Produit par AHIS",
     start: "Commencer",
     next: "Suivant",
     prev: "Précédent",
@@ -32,5 +32,9 @@ const translationsFr = {
         "Penser et décider par moi-même sans beaucoup consulter les autres.",
         "Je ne remarque peut-être pas souvent les choses car je me concentre sur mon propre travail.",
         "Je ne change pas d'opinion."
-    ]
+    ],
+    "balance": "Équilibre",
+    "active": "Actif",
+    "feminin": "Féminin",
+    "harmony": "Harmonie"
 };

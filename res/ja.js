@@ -1,6 +1,6 @@
 const translationsJa = {
-    introBold: "あなたの体質に合った\nフェムケアアドバイス",
-    introSmall: "Produced by Ad-Naturam × 嗅覚反応分析",
+    introBold: "アロマパーソナルマッチング",
+    introSmall: "Produced by AHIS",
     start: "開始",
     next: "次へ",
     prev: "戻る",
@@ -32,5 +32,9 @@ const translationsJa = {
         "あまり周りに相談せず、自分で考えて決断する。",
         "自分の仕事に集中しているので、気づかないことが多いかもしれない。",
         "自分の意見を変えない。"
-    ]
+    ],
+    "balance": "バランス",
+    "active": "アクティブ",
+    "feminin": "フェミニン",
+    "harmony": "ハーモニー"
 };
