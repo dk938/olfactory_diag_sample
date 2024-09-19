@@ -14,7 +14,7 @@ body {
 
 /* 共通の背景クラス */
 .background-image {
-    background-image: url('Background 1280x832.png');
+    background-image: url('img/Background 1280x832.png');
     background-size: cover;
     background-position: center;
     width: 100%;
