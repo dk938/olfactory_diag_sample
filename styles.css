@@ -247,3 +247,9 @@ body {
 #question-text {
     font-weight: bold; /* 文字を太字にする */
 }
+
+#prev-button, #next-button {
+    font-size: 1.5em; /* フォントサイズを1.5倍に */
+    padding: 10px; /* パディングを10pxに設定 */
+    width: 150px; /* 水平方向の長さを揃える */
+}
