@@ -64,26 +64,29 @@
         <h2 id="result-title">診断結果</h2>
         <p><span id="result-type">あなたのタイプは:</span> <span id="final-type"></span></p>
         <p id="detail-link-text"></p> <!-- 詳細リンクの表示場所 -->
-        <table id="result-table" class="result-table">
-            <tr>
-                <th id="question">質問</th>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-                <th>6</th>
-            </tr>
-            <tr id="answers-row">
-                <td id="answer">回答</td>
-                <td id="answer-1"></td>
-                <td id="answer-2"></td>
-                <td id="answer-3"></td>
-                <td id="answer-4"></td>
-                <td id="answer-5"></td>
-                <td id="answer-6"></td>
-            </tr>
-        </table>
+
+        <!-- タブメニュー -->
+        <div class="tab-menu">
+            <button class="tab-button" onclick="showTab('balance')">balance</button>
+            <button class="tab-button" onclick="showTab('active')">active</button>
+            <button class="tab-button" onclick="showTab('feminin')">feminin</button>
+            <button class="tab-button" onclick="showTab('harmony')">harmony</button>
+        </div>
+
+        <!-- タブコンテンツ -->
+        <div id="balance" class="tab-content">
+            <p>バランスの詳細情報...</p>
+        </div>
+        <div id="active" class="tab-content" style="display:none;">
+            <p>アクティブの詳細情報...</p>
+        </div>
+        <div id="feminin" class="tab-content" style="display:none;">
+            <p>フェミニンの詳細情報...</p>
+        </div>
+        <div id="harmony" class="tab-content" style="display:none;">
+            <p>ハーモニーの詳細情報...</p>
+        </div>
+
         <button onclick="restartQuiz()" class="restart-button" id="restart">再スタート</button>
     </div>
 

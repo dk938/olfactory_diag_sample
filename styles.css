@@ -253,3 +253,41 @@ body {
     padding: 10px; /* パディングを10pxに設定 */
     width: 150px; /* 水平方向の長さを揃える */
 }
+
+/* タブメニューのスタイル */
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0; /* マージンを削除 */
+}
+
+.tab-button {
+    background-color: #a0a0a0; /* グレー背景色 */
+    color: #333; /* テキストカラー */
+    padding: 10px 20px;
+    border: 1px solid #777474; /* 境界線を追加 */
+    border-bottom: none; /* 下の境界線を削除 */
+    border-radius: 5px 5px 0 0; /* 上部の角を丸める */
+    cursor: pointer;
+    margin: 0; /* マージンを削除 */
+}
+
+.tab-button.active {
+    background-color: #e5e6ec; /* 選択中のタブの背景色 */
+    color: black; /* 選択中のタブのテキストカラー */
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd; /* 境界線を追加 */
+    border-radius: 0 0 5px 5px; /* 下部の角を丸める */
+    background-color: #e5e6ec; /* グレー背景色 */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tab-content.active {
+    display: block;
+}
