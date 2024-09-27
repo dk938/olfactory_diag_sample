@@ -52,6 +52,9 @@ function selectOption(option) {
     document.getElementById('option-' + option.toLowerCase()).classList.add('selected');
 
     document.getElementById('next-button').disabled = false;
+    setTimeout(() => {
+        nextQuestion(); // 0.5秒後に次の問題に遷移
+    }, 500);
 }
 
 // 前の質問に戻る関数
@@ -208,4 +211,63 @@ function changeLanguage(newLanguage) {
     }
     updateText(); // テキストを更新
     showQuestion(currentQuestion); // 質問を表示
+}
+
+// タブを表示する関数
+function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+        tab.style.display = 'none';
+    });
+
+    const activeTab = document.getElementById(tabId);
+    if (activeTab) {
+        activeTab.style.display = 'block';
+    }
+
+    const buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    const activeButton = document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+}
+
+// 結果を計算する関数
+function calculateResult() {
+    let upperCount = 0;
+    let leftCount = 0;
+
+    if (selectedAnswers[0] === 'A') upperCount++;
+    if (selectedAnswers[1] === 'A') upperCount++;
+    if (selectedAnswers[2] === 'A') upperCount++;
+
+    if (selectedAnswers[3] === 'A') leftCount++;
+    if (selectedAnswers[4] === 'A') leftCount++;
+    if (selectedAnswers[5] === 'A') leftCount++;
+
+    const upperType = upperCount >= 2 ? "upper" : "lower";
+    const leftType = leftCount >= 2 ? "left" : "right";
+
+    const combinationType = `${leftType}-${upperType}`;
+    const typeMapping = {
+        "left-upper": "balance",
+        "left-lower": "feminin",
+        "right-upper": "active",
+        "right-lower": "harmony"
+    };
+    const finalTypeKey = typeMapping[combinationType];
+
+    const finalType = translations[finalTypeKey];
+
+    const detailLinkText = document.getElementById('detail-link-text');
+    detailLinkText.innerHTML = `<a href="${getLink(finalTypeKey)}" target="_blank" rel="noopener noreferrer">${translations.detailLink}</a>`;
+
+    document.getElementById('final-type').innerText = finalType;
+
+    // 初期表示のタブを設定
+    showTab(finalTypeKey);
 }
