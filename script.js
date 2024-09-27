@@ -51,7 +51,6 @@ function selectOption(option) {
 
     document.getElementById('option-' + option.toLowerCase()).classList.add('selected');
 
-    document.getElementById('next-button').disabled = false;
     setTimeout(() => {
         nextQuestion(); // 0.5秒後に次の問題に遷移
     }, 500);
@@ -193,6 +192,20 @@ function updateText() {
     if (question) question.innerText = translations.question; // 質問
     if (answer) answer.innerText = translations.answer; // 回答
     if (restart) restart.innerText = translations.restart; // 再スタート
+
+    const balanceTitle = document.getElementById('balance-title');
+    const balanceDescription = document.getElementById('balance-description');
+    const balanceTrends = document.getElementById('balance-trends');
+    const balanceFlavor = document.getElementById('balance-flavor');
+    const balanceFlavorDescription = document.getElementById('balance-flavor-description');
+    const balanceOtherFlavours = document.getElementById('balance-other-flavours');
+
+    if (balanceTitle) balanceTitle.innerText = translations["balance-title"];
+    if (balanceDescription) balanceDescription.innerText = translations["balance-description"];
+    if (balanceTrends) balanceTrends.innerText = translations["balance-trends"];
+    if (balanceFlavor) balanceFlavor.innerText = translations["balance-flavor"];
+    if (balanceFlavorDescription) balanceFlavorDescription.innerText = translations["balance-flavor-description"];
+    if (balanceOtherFlavours) balanceOtherFlavours.innerText = translations["balance-other-flavours"];
 }
 
 // 言語を変更する関数
@@ -223,6 +236,7 @@ function showTab(tabId) {
     const activeTab = document.getElementById(tabId);
     if (activeTab) {
         activeTab.style.display = 'block';
+        updateText(); // タブが表示されたときにテキストを更新
     }
 
     const buttons = document.querySelectorAll('.tab-button');

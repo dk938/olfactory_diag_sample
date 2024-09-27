@@ -37,5 +37,11 @@ const translationsEn = {
     "active": "Active",
     "feminin": "Feminin",
     "harmony": "Harmony",
-    "detailLink": "Details"
+    "detailLink": "Details",
+    "balance-title": "Balanced type",
+    "balance-description": "Always calm and rational, with a sense of humor.",
+    "balance-trends": "You have the talent to take an appropriate distance from your emotions...",
+    "balance-flavor": "Geranium",
+    "balance-flavor-description": "The scent of geranium has a relaxing and balancing effect...",
+    "balance-other-flavours": "Tropical basil (Ocimum basilicum)..."
 };

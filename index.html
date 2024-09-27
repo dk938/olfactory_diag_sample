@@ -67,48 +67,26 @@
 
         <!-- タブメニュー -->
         <div class="tab-menu">
-            <button class="tab-button" onclick="showTab('balance')">balance</button>
-            <button class="tab-button" onclick="showTab('active')">active</button>
-            <button class="tab-button" onclick="showTab('feminin')">feminin</button>
-            <button class="tab-button" onclick="showTab('harmony')">harmony</button>
+            <button class="tab-button" id="tab-balance" onclick="showTab('balance')">balance</button>
+            <button class="tab-button" id="tab-active" onclick="showTab('active')">active</button>
+            <button class="tab-button" id="tab-feminin" onclick="showTab('feminin')">feminin</button>
+            <button class="tab-button" id="tab-harmony" onclick="showTab('harmony')">harmony</button>
         </div>
 
         <!-- タブコンテンツ -->
         <div id="balance" class="tab-content">
             <img src="img/detail_top_balance.png" alt="Balance Image" style="width: 100%; max-width: 600px;">
-            <h1>Balanced type</h1>
-            <p>Always calm and rational, with a sense of humor.</p>
+            <h1 id="balance-title">Balanced type</h1>
+            <p id="balance-description">Always calm and rational, with a sense of humor.</p>
             <h2>The fundamental trends</h2>
-            <p>You have the talent to take an appropriate distance from your emotions and tend to always think calmly. Even under pressure, your thinking remains little affected and you know your limits. Contrasting with the apparent calm of your appearance, your sense of humor is also attractive.</p>
-            <p>On the other hand, you may sometimes have trouble understanding the emotions of others. Some may be aware of their low emotional expressiveness. As a result, you may tend to avoid social interactions and feel anxiety in communication. In addition, you may find it difficult to work in a team, which can make cooperating with others complicated. Sometimes you could give a cold impression to others and feel uncomfortable expressing affection.</p>
-            <p>You tend to think about things from a unique point of view, privileging reason over emotions, and trying to grasp things from an original angle.</p>
-
+            <p id="balance-trends">You have the talent to take an appropriate distance from your emotions...</p>
             <h2>Recommended flavors</h2>
             <img src="img/detail_bottle_balance.png" alt="Balance Bottle" style="width: 100%; max-width: 600px;">
-            <p>Geranium</p>
-            <p>The scent of geranium has a relaxing and balancing effect on emotions. This effect is due to components such as citronellol and geraniol. Balanced people are enthusiastic about new information and knowledge, but tend to lose their emotional balance when plans or expectations are not realized. The scent of geranium can help restore this balance.</p>
-
+            <p id="balance-flavor">Geranium</p>
+            <p id="balance-flavor-description">The scent of geranium has a relaxing and balancing effect...</p>
             <div style="border: 1px solid #ddd; padding: 10px; margin-top: 20px;">
                 <h3>Other recommended flavours</h3>
-                <p>Tropical basil (Ocimum basilicum)<br>
-                Rosewood (Aniba rosaeodora)<br>
-                Wild carrot (Daucus carota)<br>
-                Clove (Syzygium aromaticum)<br>
-                Tarragon (Artemisia dracunculus)<br>
-                Sweet fennel (Foeniculum vulgare var. dulce)<br>
-                Bourbon geranium (Pelargonium x asperum)<br>
-                Geranium rosat (Pelargonium graveolens)<br>
-                Sweet marjoram (Origanum majorana)<br>
-                Peppermint (Mentha x piperita)<br>
-                Neroli (Citrus aurantium var. amara)<br>
-                Patchouli (Pogostemon cablin)<br>
-                Palmarosa (Cymbopogon martinii)<br>
-                Damascus Rose (Rosa damascena)<br>
-                Sandalwood (Santalum album)<br>
-                Mountain savory (Satureja montana)<br>
-                Sclare sage (Salvia sclarea)<br>
-                Thyme with linalol (Thymus vulgaris ct. linalool)<br>
-                Thyme with thymol (Thymus vulgaris ct. thymol)</p>
+                <p id="balance-other-flavours">Tropical basil (Ocimum basilicum)...</p>
             </div>
         </div>
         <div id="active" class="tab-content" style="display:none;">

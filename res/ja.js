@@ -37,5 +37,11 @@ const translationsJa = {
     "active": "アクティブ",
     "feminin": "フェミニン",
     "harmony": "ハーモニー",
-    "detailLink": "詳細リンク"
+    "detailLink": "詳細リンク",
+    "balance-title": "バランスタイプ",
+    "balance-description": "常に冷静で理性的、ユーモアのセンスを持っています。",
+    "balance-trends": "感情から適切な距離を置く才能があります...",
+    "balance-flavor": "ゼラニウム",
+    "balance-flavor-description": "ゼラニウムの香りはリラックスとバランスをもたらします...",
+    "balance-other-flavours": "トロピカルバジル (Ocimum basilicum)..."
 };

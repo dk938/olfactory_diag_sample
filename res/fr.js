@@ -37,5 +37,11 @@ const translationsFr = {
     "active": "Actif",
     "feminin": "Féminin",
     "harmony": "Harmonie",
-    "detailLink": "Détails"
+    "detailLink": "Détails",
+    "balance-title": "Type équilibré",
+    "balance-description": "Toujours calme et rationnel, avec un sens de l'humour.",
+    "balance-trends": "Vous avez le talent de prendre une distance appropriée par rapport à vos émotions...",
+    "balance-flavor": "Géranium",
+    "balance-flavor-description": "Le parfum du géranium a un effet relaxant et équilibrant...",
+    "balance-other-flavours": "Basilic tropical (Ocimum basilicum)..."
 };
