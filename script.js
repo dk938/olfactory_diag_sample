@@ -171,41 +171,83 @@ window.onload = function() {
 
 // テキストを更新する関数
 function updateText() {
-    const introBold = document.getElementById('intro-text-bold');
-    const introSmall = document.getElementById('intro-text-small');
-    const startButton = document.getElementById('start-button');
-    const prevButton = document.getElementById('prev-button');
-    const nextButton = document.getElementById('next-button');
-    const resultTitle = document.getElementById('result-title');
-    const resultType = document.getElementById('result-type');
-    const question = document.getElementById('question');
-    const answer = document.getElementById('answer');
-    const restart = document.getElementById('restart');
+    // 更新するテキストを設定
+    document.getElementById('intro-text-bold').innerText = translations.introBold;
+    document.getElementById('intro-text-small').innerText = translations.introSmall;
+    document.getElementById('start-button').innerText = translations.start;
+    document.getElementById('prev-button').innerText = translations.prev;
+    document.getElementById('next-button').innerText = translations.next;
+    document.getElementById('restart').innerText = translations.restart;
+    document.getElementById('result-title').innerText = translations.resultTitle;
+    document.getElementById('result-type').innerText = translations.resultType;
 
-    if (introBold) introBold.innerText = translations.introBold;
-    if (introSmall) introSmall.innerText = translations.introSmall;
-    if (startButton) startButton.innerText = translations.start; // スタートボタン
-    if (prevButton) prevButton.innerText = translations.prev; // 戻るボタン
-    if (nextButton) nextButton.innerText = translations.next; // 次へボタン
-    if (resultTitle) resultTitle.innerText = translations.resultTitle; // 診断結果
-    if (resultType) resultType.innerText = translations.resultType; // あなたのタイプは:
-    if (question) question.innerText = translations.question; // 質問
-    if (answer) answer.innerText = translations.answer; // 回答
-    if (restart) restart.innerText = translations.restart; // 再スタート
+    // 質問と選択肢の更新
+    const questions = translations.questions;
+    const optionsA = translations.optionsA;
+    const optionsB = translations.optionsB;
 
-    const balanceTitle = document.getElementById('balance-title');
-    const balanceDescription = document.getElementById('balance-description');
-    const balanceTrends = document.getElementById('balance-trends');
-    const balanceFlavor = document.getElementById('balance-flavor');
-    const balanceFlavorDescription = document.getElementById('balance-flavor-description');
-    const balanceOtherFlavours = document.getElementById('balance-other-flavours');
+    document.querySelectorAll('.question-content p').forEach((element, index) => {
+        if (index < questions.length) {
+            element.innerText = questions[index];
+        }
+    });
 
-    if (balanceTitle) balanceTitle.innerText = translations["balance-title"];
-    if (balanceDescription) balanceDescription.innerText = translations["balance-description"];
-    if (balanceTrends) balanceTrends.innerText = translations["balance-trends"];
-    if (balanceFlavor) balanceFlavor.innerText = translations["balance-flavor"];
-    if (balanceFlavorDescription) balanceFlavorDescription.innerText = translations["balance-flavor-description"];
-    if (balanceOtherFlavours) balanceOtherFlavours.innerText = translations["balance-other-flavours"];
+    document.querySelectorAll('.option-box .option-text').forEach((element, index) => {
+        if (index < optionsA.length) {
+            element.innerText = optionsA[index];
+        }
+    });
+
+    document.querySelectorAll('.option-box .option-text').forEach((element, index) => {
+        if (index < optionsB.length) {
+            element.innerText = optionsB[index];
+        }
+    });
+
+    // タブのテキストを更新
+    const tabTitles = [
+        'balance-title', 'active-title', 'feminin-title', 'harmony-title'
+    ];
+    tabTitles.forEach(title => {
+        document.getElementById(title).innerText = translations[title];
+    });
+
+    // 各タブの説明を更新
+    const tabDescriptions = [
+        'balance-description', 'active-description', 'feminin-description', 'harmony-description'
+    ];
+    tabDescriptions.forEach(description => {
+        document.getElementById(description).innerText = translations[description];
+    });
+
+    // 各タブのトレンド、フレーバー、その他のフレーバーを更新
+    const tabTrends = [
+        'balance-trends', 'active-trends', 'feminin-trends', 'harmony-trends'
+    ];
+    tabTrends.forEach(trend => {
+        document.getElementById(trend).innerText = translations[trend];
+    });
+
+    const tabFlavors = [
+        'balance-flavor', 'active-flavor', 'feminin-flavor', 'harmony-flavor'
+    ];
+    tabFlavors.forEach(flavor => {
+        document.getElementById(flavor).innerText = translations[flavor];
+    });
+
+    const tabFlavorDescriptions = [
+        'balance-flavor-description', 'active-flavor-description', 'feminin-flavor-description', 'harmony-flavor-description'
+    ];
+    tabFlavorDescriptions.forEach(flavorDescription => {
+        document.getElementById(flavorDescription).innerText = translations[flavorDescription];
+    });
+
+    const tabOtherFlavors = [
+        'balance-other-flavours', 'active-other-flavours', 'feminin-other-flavours', 'harmony-other-flavours'
+    ];
+    tabOtherFlavors.forEach(otherFlavor => {
+        document.getElementById(otherFlavor).innerText = translations[otherFlavor];
+    });
 }
 
 // 言語を変更する関数
