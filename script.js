@@ -212,6 +212,12 @@ function updateText() {
         document.getElementById(title).innerText = translations[title];
     });
 
+    // 各タブのボタンのテキストを更新
+    document.getElementById('tab-balance').innerText = translations['balance-title'];
+    document.getElementById('tab-active').innerText = translations['active-title'];
+    document.getElementById('tab-feminin').innerText = translations['feminin-title'];
+    document.getElementById('tab-harmony').innerText = translations['harmony-title'];
+
     // 各タブの説明を更新
     const tabDescriptions = [
         'balance-description', 'active-description', 'feminin-description', 'harmony-description'
@@ -247,6 +253,13 @@ function updateText() {
     ];
     tabOtherFlavors.forEach(otherFlavor => {
         document.getElementById(otherFlavor).innerText = translations[otherFlavor];
+    });
+
+    // タイトルの更新
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.querySelector('#trends-title').innerText = translations["trends-title"];
+        tab.querySelector('#flavors-title').innerText = translations["flavors-title"];
+        tab.querySelector('#other-flavors-title').innerText = translations["other-flavors-title"];
     });
 }
 
@@ -319,9 +332,9 @@ function calculateResult() {
 
     const finalType = translations[finalTypeKey];
 
-    const detailLinkText = document.getElementById('detail-link-text');
+/*     const detailLinkText = document.getElementById('detail-link-text');
     detailLinkText.innerHTML = `<a href="${getLink(finalTypeKey)}" target="_blank" rel="noopener noreferrer">${translations.detailLink}</a>`;
-
+ */
     document.getElementById('final-type').innerText = finalType;
 
     // 初期表示のタブを設定
