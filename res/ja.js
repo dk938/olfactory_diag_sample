@@ -33,15 +33,41 @@ const translationsJa = {
         "自分の仕事に集中しているので、気づかないことが多いかもしれない。",
         "自分の意見を変えない。"
     ],
+    "trends-title": "基本的な傾向",
+    "flavors-title": "推奨フレーバー",
+    "other-flavors-title": "他の推奨フレーバー",
+    //type definition
     "balance": "バランス",
     "active": "アクティブ",
     "feminin": "フェミニン",
     "harmony": "ハーモニー",
     "detailLink": "詳細リンク",
+    //balance
     "balance-title": "バランスタイプ",
     "balance-description": "常に冷静で理性的、ユーモアのセンスを持っています。",
-    "balance-trends": "感情から適切な距離を置く才能があります...",
+    "balance-trends": "あなたは感情と適切な距離を取る才能があり、常に冷静に考える傾向があります。圧力の下でも、あなたの考えはほとんど影響を受けず、あなたの限界を知っています。あなたの態度の穏やかさとは対照的に、あなたのユーモアのセンスも魅力的です。\n\n一方で、他人の感情を理解するのが難しいことがあります。一部の人は自分の感情表現が弱いことに気づいているかもしれません。その結果、社会的な相互作用を避ける傾向があり、コミュニケーションで不安を感じることがあります。\n\nさらに、チームでの作業が難しいことがあり、他の人との協力が複雑になることがあります。時には、他人に冷たい印象を与え、愛情を表現することに不快感を感じることがあります。\n\nあなたは、ユニークな視点から物事を考え、理性を感情よりも優先し、物事をオリジナルな角度から捉えようとします。",
     "balance-flavor": "ゼラニウム",
     "balance-flavor-description": "ゼラニウムの香りはリラックスとバランスをもたらします...",
-    "balance-other-flavours": "トロピカルバジル (Ocimum basilicum)..."
+    "balance-other-flavours": "トロピカルバジル (Ocimum basilicum)...",
+    //active
+    "active-title": "アクティブタイプ",
+    "active-description": "常にエネルギッシュで活気に満ち、冒険心を持っています。",
+    "active-trends": "感情から適切な距離を置く才能があります...",
+    "active-flavor": "レモン",
+    "active-flavor-description": "レモンの香りはリフレッシュと活力をもたらします...",
+    "active-other-flavours": "オレンジ (Citrus sinensis)...",
+    //feminin
+    "feminin-title": "フェミニンタイプ",
+    "feminin-description": "常に優しく、思いやりの心を持っています。",
+    "feminin-trends": "他人を理解し、サポートする才能があります...",
+    "feminin-flavor": "ローズ",
+    "feminin-flavor-description": "ローズの香りは落ち着きと安らぎをもたらします...",
+    "feminin-other-flavours": "ジャスミン (Jasminum sambac)...",
+    //harmony
+    "harmony-title": "ハーモニータイプ",
+    "harmony-description": "常に外交的で協力的、統一感を持っています。",
+    "harmony-trends": "人々を一つにまとめ、調和を生み出す才能があります...",
+    "harmony-flavor": "ベルガモット",
+    "harmony-flavor-description": "ベルガモットの香りは落ち着きと高揚感をもたらします...",
+    "harmony-other-flavours": "イランイラン (Cananga odorata)..."
 };
