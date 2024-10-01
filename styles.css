@@ -291,3 +291,19 @@ body {
 .tab-content.active {
     display: block;
 }
+
+/* 左揃えにする特定の要素のスタイル */
+#balance-flavor-description,
+#balance-trends,
+#balance-other-flavours,
+#active-flavor-description,
+#active-trends,
+#active-other-flavours,
+#feminin-flavor-description,
+#feminin-trends,
+#feminin-other-flavours,
+#harmony-flavor-description,
+#harmony-trends,
+#harmony-other-flavours {
+    text-align: left; /* 左揃え */
+}
