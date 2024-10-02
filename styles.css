@@ -328,3 +328,9 @@ body {
     width: 100%;
     height: 100vh;
 }
+
+.flavor-highlight {
+    font-weight: bold; /* 太字 */
+    font-size: 1.2em; /* フォントサイズを大きく */
+    text-decoration: underline; /* 下線を追加 */
+}
