@@ -81,6 +81,10 @@ function showResult() {
     document.getElementById('question-screen').style.display = 'none';
     document.getElementById('result-screen').style.display = 'flex';
     calculateResult();
+    // 結果を表示した後にスクロール
+    setTimeout(() => {
+        window.scrollTo(0, 0); // 画面の上端にスクロール
+    }, 100); // 100ミリ秒の遅延を設定
 }
 
 // 結果を計算する関数
@@ -121,10 +125,7 @@ function calculateResult() {
     // 結果を画面に表示
     document.getElementById('final-type').innerText = finalType;
 
-    // 回答結果を表に表示
-    const answersRow = document.getElementById('answers-row');
-    answersRow.innerHTML = `<td id="answer">${translations.answer}</td>` +
-        selectedAnswers.map((answer, index) => `<td>${answer}</td>`).join('');
+
 }
 
 // finalTypeKeyに基づいてリンクを取得する関数
@@ -213,10 +214,10 @@ function updateText() {
     });
 
     // 各タブのボタンのテキストを更新
-    document.getElementById('tab-balance').innerText = translations['balance-title'];
-    document.getElementById('tab-active').innerText = translations['active-title'];
-    document.getElementById('tab-feminin').innerText = translations['feminin-title'];
-    document.getElementById('tab-harmony').innerText = translations['harmony-title'];
+    document.getElementById('tab-balance').innerText = translations['balance'];
+    document.getElementById('tab-active').innerText = translations['active'];
+    document.getElementById('tab-feminin').innerText = translations['feminin'];
+    document.getElementById('tab-harmony').innerText = translations['harmony'];
 
     // 各タブの説明を更新
     const tabDescriptions = [
