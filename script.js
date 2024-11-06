@@ -173,6 +173,7 @@ window.onload = function() {
 // テキストを更新する関数
 function updateText() {
     // 更新するテキストを設定
+    document.title = translations.introBold;
     document.getElementById('intro-text-bold').innerText = translations.introBold;
     document.getElementById('intro-text-small').innerText = translations.introSmall;
     document.getElementById('start-button').innerText = translations.start;
@@ -263,7 +264,6 @@ function updateText() {
         tab.querySelector('#other-flavors-title').innerText = translations["other-flavors-title"];
     });
 }
-
 // 言語を変更する関数
 function changeLanguage(newLanguage) {
     language = newLanguage;
