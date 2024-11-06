@@ -6,8 +6,30 @@
 // 即時実行関数でスコープを分離
 (function() {
     // デバッグモードの設定
-    const DEBUG_ENABLED = true; // ここでデバッグモードのオン・オフを切り替え
+    const DEBUG_ENABLED = false; // デフォルトはオフ
     let debugMode = DEBUG_ENABLED;
+    let keySequence = '';
+    const SECRET_CODE = '12345678';
+
+    // キー入力を監視
+    document.addEventListener('keydown', (e) => {
+        keySequence += e.key;
+        if (keySequence.length > SECRET_CODE.length) {
+            keySequence = keySequence.slice(-SECRET_CODE.length);
+        }
+
+        if (keySequence === SECRET_CODE) {
+            debugMode = !debugMode;
+            keySequence = '';
+            if (debugMode) {
+                debugUI.show();
+                debugUI.showTestUI();
+            } else {
+                debugUI.hide();
+                debugUI.hideTestUI();
+            }
+        }
+    });
 
     // スタイル定義
     const styles = `
